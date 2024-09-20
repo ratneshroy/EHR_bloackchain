@@ -32,13 +32,15 @@ async function addPatientsMedicalRecord() {
     //     tableBody.appendChild(row);
     // });
 }
-function openMedicalReport(button){
+function openMedicalReport(button) {
     fetch('medical-prescription-view.html')
         .then(response => response.text())
         .then(html => {
             document.getElementById('content').innerHTML = html;
-
-            
+            const script = document.createElement('script');
+            script.src = 'medical-prescription-view.js';
+            script.onload = () => populateDetails();
+            document.body.appendChild(script);
 
         });
 }

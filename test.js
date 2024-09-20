@@ -7,10 +7,10 @@ async function main() {
     const add = "0x93F8223Ac44d132355312789762441fe752Eb51d";
     const abi = fs.readFileSync("./AD-contract_sol_EHR.abi", "utf8");
     const contract = new ethers.Contract(add,abi,wallet);
-    //const tx = await contract.getDoctorList();
+    const tx = await contract.getMedicalRecords("4848e444ce4e4f");
    //const p = await contract.addPatient('','U2FsdGVkX197XkF76SVAKInQ1V+9IO7pkZAw/b4FKYu/Ejz7HF/QHW7J4xNWt2Kiu0IlmwoK0KjN1UjNtvRBWY/gR3Imi8w2Ip8PIl8FKCOQE9snJvJAeghM7MDscn+j');
    const o = await contract.addAppointment('123',"4848e444ce4e4f",'c9aaaa6f-30ab-44cf-bb0a-d69c9bfd523f','U2FsdGVkX197XkF76SVAKInQ1V+9IO7pkZAw/b4FKYu/Ejz7HF/QHW7J4xNWt2Kiu0IlmwoK0KjN1UjNtvRBWY/gR3Imi8w2Ip8PIl8FKCOQE9snJvJAeghM7MDscn+j');
-   console.log(o);
+   console.log(tx[0][0]);
 }
 
 main();
