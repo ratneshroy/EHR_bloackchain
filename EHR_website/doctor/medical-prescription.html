@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Prescription Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0px;
+            background-color: #f4f4f4;
+            overflow-y: auto;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #218838;
+        }
+        .medicine-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .medicine-group input {
+            width: calc(25% - 10px);
+        }
+        .remove-row-btn {
+            background: none;
+            border: none;
+            color: red;
+            cursor: pointer;
+            font-size: 20px;
+            line-height: 0;
+        }
+        .remove-row-btn:hover {
+            color: darkred;
+        }
+        .file-upload-box {
+            border: 2px dashed #ddd;
+            padding: 10px;
+            min-height: 100px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .file-item {
+            display: flex;
+            align-items: center;
+            background-color: #f4f4f4;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .file-item span {
+            margin-right: 10px;
+        }
+        .file-item button {
+            background: none;
+            border: none;
+            color: red;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .add-file-btn {
+            padding: 10px;
+            border: 2px dashed #ddd;
+            cursor: pointer;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .upload-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .upload-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Medical Prescription Form</h2>
+        <form id="prescriptionForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="doctorName">Doctor's Name:</label>
+                <input type="text" id="doctorName" name="doctorName" required>
+            </div>
+            <div class="form-group">
+                <label for="patientName">Patient's Name:</label>
+                <input type="text" id="patientName" name="patientName" required>
+            </div>
+            <div class="form-group">
+                <label for="patientAge">Patient's Age:</label>
+                <input type="text" id="patientAge" name="patientAge" required>
+            </div>
+            <div class="form-group">
+                <label for="diagnosis">Diagnosis:</label>
+                <textarea id="diagnosis" name="diagnosis" rows="3"></textarea>
+            </div>
+        
+            <div class="form-group">
+                <label for="medicine">Medicines:</label>
+                <div id="medicineFields">
+                    <div class="medicine-group">
+                        <input type="text" placeholder="Medicine Name" class="medicine-name">
+                        <input type="text" placeholder="Dosage" class="medicine-dosage">
+                        <input type="text" placeholder="Frequency" class="medicine-frequency">
+                        <input type="text" placeholder="Duration" class="medicine-duration">
+                        <button type="button" class="remove-row-btn" onclick="removeRow(this)">&times;</button>
+                    </div>
+                </div>
+                <button type="button" onclick="addMedicineField()">Add Medicine</button>
+            </div>
+        
+            <!-- File attachment section -->
+            <div class="form-group">
+                <label>Attach Files:</label>
+                <div id="fileUploadBox" class="file-upload-box">
+                    <div class="add-file-btn" onclick="triggerFileInput()">+ Add File</div>
+                </div>
+                <input type="file" id="fileInput" multiple style="display: none;">
+            </div>
+        
+            <button type="button" class="upload-button" onclick="uploadForm()">Upload</button>
+        </form>
+        
+        
+    </div>
+</body>
+</html>

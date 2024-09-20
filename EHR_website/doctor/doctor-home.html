@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Home</title>
+    <style>
+        .search-bar {
+            margin-bottom: 15px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="doctor-profile">
+        <h2>Dr. John Doe</h2>
+        <p>Cardiologist</p>
+    </div>
+    
+    <div>
+        <h2>Patients List</h2>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search patients...">
+        </div>
+        <table class="patient-list" id="patientTable">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>PAT123</td>
+                    <td>John Smith</td>
+                    <td>45</td>
+                    <td>2024-09-10</td>
+                    <td>Consulted</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>PAT456</td>
+                    <td>Jane Doe</td>
+                    <td>30</td>
+                    <td>2024-09-12</td>
+                    <td>Not Consulted</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+    <script src="doctor-home.js"></script>
+</body>
+</html>

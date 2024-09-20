@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 100%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .details-group {
+            margin-bottom: 20px;
+        }
+        .details-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .details-group span {
+            display: block;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .medicine-list {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .medicine-list th, .medicine-list td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .medicine-list th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .file-list {
+            margin-top: 15px;
+        }
+        .file-item {
+            margin-bottom: 10px;
+            background-color: #f4f4f4;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .back-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Prescription Details</h2>
+        
+        <div class="details-group">
+            <label>Doctor's Name:</label>
+            <span id="doctorName"></span>
+        </div>
+
+        <div class="details-group">
+            <label>Patient's Name:</label>
+            <span id="patientName"></span>
+        </div>
+
+        <div class="details-group">
+            <label>Patient's Age:</label>
+            <span id="patientAge"></span>
+        </div>
+
+        <div class="details-group">
+            <label>Diagnosis:</label>
+            <span id="diagnosis"></span>
+        </div>
+
+        <div class="details-group">
+            <label>Medicines:</label>
+            <table class="medicine-list" id="medicineList">
+                <thead>
+                    <tr>
+                        <th>Medicine Name</th>
+                        <th>Dosage</th>
+                        <th>Frequency</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Medicine rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="details-group">
+            <label>Attached Files:</label>
+            <div id="fileList" class="file-list">
+                <!-- File items will be dynamically added here -->
+            </div>
+        </div>
+
+        <button class="back-button" onclick="goBack()">Go Back</button>
+    </div>
+
+
+</body>
+</html>

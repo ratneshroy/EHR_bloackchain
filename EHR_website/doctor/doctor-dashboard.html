@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f4f4f4;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            box-sizing: border-box;
+            height: 100%;
+            position: relative;
+        }
+        .sidebar h2 {
+            margin-top: 0;
+            font-size: 20px;
+            text-align: center;
+        }
+        .sidebar .menu-item {
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .sidebar .menu-item.active {
+            background-color: #555;
+        }
+        .sidebar .menu-item:hover {
+            background-color: #444;
+        }
+        .sidebar .sign-out {
+            margin-top: auto;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #cc0000;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            text-align: center;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 15px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .doctor-profile {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .doctor-profile h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .patient-list {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .patient-list th, .patient-list td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .patient-list th {
+            background-color: #f4f4f4;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+                position: absolute;
+                top: 0;
+                left: -200px;
+                transition: left 0.3s ease;
+            }
+            .sidebar.active {
+                left: 0;
+            }
+            .content {
+                margin-left: 200px;
+            }
+        }.loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 20px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <h2>Doctor Dashboard</h2>
+        <div class="menu-item active" id="home">Home</div>
+        <div class="menu-item" id="viewReports">View Reports</div>
+        <div class="menu-item" id="consult">Consult</div>
+        <button class="sign-out" id="signOut">Sign Out</button>
+    </div>
+    <div class="content" id="content">
+        <!-- Default content will be loaded here -->
+    </div>
+    <div class="loading-overlay" id="loadingOverlay">Removing doctor, please wait...</div>
+    <!-- Include the external JavaScript files -->
+    <script src="doctor-dashboard.js"></script>
+    <script src="doctor-consult.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+</body>
+</html>

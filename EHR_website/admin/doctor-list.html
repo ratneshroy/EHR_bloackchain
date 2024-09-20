@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor List</title>
+    <style>
+        .search-bar {
+            margin-bottom: 15px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .doctor-list {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .doctor-list th, .doctor-list td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .doctor-list th {
+            background-color: #f4f4f4;
+        }
+        .doctor-list td button.view-button {
+            background-color: #28a745; /* Green background */
+            border: none;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .doctor-list td button.view-button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+        .doctor-list td button.delete-button {
+            background-color: #cc0000; /* Red background */
+            border: none;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .doctor-list td button.delete-button:hover {
+            background-color: #a30000; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="doctorListView">
+            <h1>Doctors List</h1>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search doctors...">
+            </div>
+            <table class="doctor-list" id="doctorTable">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Name</th>
+                        <th>Speciality</th>
+                        <th>Joining Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example data, replace with dynamic content -->
+                    
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+        <div id="doctorDetailView" style="display: none;">
+            <!-- Details will be loaded here -->
+        </div>
+    </div>
+    <!-- Include the external JavaScript file -->
+    <script src="doctor-list.js"></script>
+</body>
+</html>

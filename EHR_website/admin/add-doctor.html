@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Doctor</title>
+    <style>
+        .form-container { 
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #218838;
+        }
+        #status {
+            margin-top: 15px;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add New Doctor</h1>
+        <form id="addDoctorForm">
+            
+            <!-- Name Field -->
+            <div class="form-group">
+                <label for="doctorName">Name:</label>
+                <input type="text" id="doctorName" name="doctorName" required>
+            </div>
+            
+            <!-- Phone Field -->
+            <div class="form-group">
+                <label for="doctorPhone">Phone:</label>
+                <input type="text" id="doctorPhone" name="doctorPhone" required>
+            </div>
+            
+            <!-- Gender Field -->
+            <div class="form-group">
+                <label for="doctorGender">Gender:</label>
+                <select id="doctorGender" name="doctorGender" >
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <!-- Date of Birth Field -->
+            <div class="form-group">
+                <label for="doctorDOB">Date of Joining:</label>
+                <input type="date" id="doctorDOJ" name="doctorDOJ" >
+            </div>
+            
+            <!-- Qualification Field -->
+            <div class="form-group">
+                <label for="doctorQualification">Qualification:</label>
+                <input type="text" id="doctorQualification" name="doctorQualification" required>
+            </div>
+            
+            <!-- Major Field -->
+            <div class="form-group">
+                <label for="doctorMajor">Speciality:</label>
+                <input type="text" id="doctorSpeciality" name="doctorSpeciality" required>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Add Doctor</button>
+            </div>
+        </form>
+
+        <!-- Status element to display messages -->
+        <div id="status"></div>
+    </div>
+</body>
+</html>
