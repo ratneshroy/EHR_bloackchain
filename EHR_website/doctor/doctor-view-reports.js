@@ -3,7 +3,7 @@ async function addPatientsMedicalRecord() {
     tableBody.innerHTML = ''; // Clear existing rows
     const contract = await getContract();
     try {
-        const appointments = await contract.getDoctorAppointments('c9aaaa6f-30ab-44cf-bb0a-d69c9bfd523f');
+        const appointments = await contract.getDoctorAppointments('25660ecb-859f-48a4-9abf-3db6649071ce');
         const response = appointments[0][3];
         const secretKey = '12345678';
 

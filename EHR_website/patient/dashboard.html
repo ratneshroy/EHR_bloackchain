@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile-header">
+                <img src="profile.jpg" alt="Profile Image" class="profile-img">
+                <h2>John Doe</h2>
+                <p>Patient</p>
+                <button class="edit-btn">Edit Profile</button>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><a id="profile-tab">Profile</a></li>
+                    <li><a id="appointment-tab">Book Appointment</a></li>
+                    <li><a id="appointments-tab">Your Appointments</a></li>
+                    <li><a id="notifications-tab">Notifications</a></li>
+                    <li><a id="medical-records-tab">View Medical Records</a></li>
+                </ul>
+            </nav>
+            <button class="logout-btn">Logout</button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Profile Section -->
+            <div id="profile-section" class="card">
+                <h2>Profile</h2>
+                <div class="profile-info" id="profile-info">
+                    
+                </div>
+            </div>
+
+            <!-- Book Appointment Section -->
+            <div id="book-appointment-section" class="card" style="display:none;">
+                <h2>Book Appointment</h2>
+                <form>
+                    <label for="doctor">Choose Doctor:</label>
+                    <select id="doctor" name="doctor">
+                        <option value="dr-smith">Dr. Smith - Cardiologist</option>
+                        <option value="dr-jones">Dr. Jones - Dermatologist</option>
+                    </select>
+
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date">
+
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time">
+
+                    <button type="submit" class="action-btn">Book Appointment</button>
+                </form>
+            </div>
+
+            <!-- Your Appointments Section -->
+            <div id="your-appointments-section" class="card" style="display:none;">
+                <h2>Your Appointments</h2>
+                <ul id="appointments-list">
+                    <li>Appointment with Dr. Smith - 20/09/2024 at 10:00 AM<button>Cancel</button></li>
+                    <li>Appointment with Dr. Jones - 25/09/2024 at 11:30 AM<button>Cancel</button></li>
+                </ul>
+            </div>
+
+            <!-- Notifications Section -->
+            <div id="notifications-section" class="card" style="display:none;">
+                <h2>Notifications</h2>
+                <ul id="notifications-list">
+                    <li>Your appointment with Dr. Smith is confirmed for 20/09/2024</li>
+                    <li>Your lab reports are available for viewing.</li>
+                </ul>
+            </div>
+
+            <!-- View Medical Records Section -->
+            <div id="view-records-section" class="card" style="display:none;">
+                <h2>View Medical Records</h2>
+
+                <div class="record-info">
+                    <p><strong>Doctor's Name:</strong> Dr. Smith</p>
+                    <p><strong>Patient's Name:</strong> John Doe</p>
+                    <p><strong>Diagnosis:</strong> Hypertension</p>
+
+                    <!-- Medicines Section -->
+                    <h3>Prescribed Medicines:</h3>
+                    <ul id="medicine-list">
+                        <li>Medicine: Amlodipine, Dosage: 10mg, Frequency: Once a day, Duration: 2 weeks</li>
+                        <li>Medicine: Lisinopril, Dosage: 5mg, Frequency: Once a day, Duration: 4 weeks</li>
+                    </ul>
+
+                    <!-- Lab Reports Section -->
+                    <h3>Lab Reports:</h3>
+                    <ul id="lab-report-list">
+                        <li><a href="#">Blood Test Report - 20/08/2024</a></li>
+                        <li><a href="#">ECG Report - 25/08/2024</a></li>
+                    </ul>
+
+                    <!-- Previous Medical Reports Section -->
+                    <h3>Previous Medical Reports:</h3>
+                    <ul id="previous-reports-list">
+                        <li><a href="#">Hypertension Report - 01/08/2024</a></li>
+                        <li><a href="#">Cholesterol Report - 05/07/2024</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Logout button functionality
+        document.getElementById('logoutBtn').addEventListener('click', function () {
+            // Clear the token from localStorage or sessionStorage
+            localStorage.removeItem('authToken');  // If you stored the token in localStorage
+            sessionStorage.removeItem('authToken');  // If you stored the token in sessionStorage
+
+            // Redirect to the login page
+            window.location.href = '/login';  // Change to the login page URL
+        });
+    </script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
